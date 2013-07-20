@@ -14,6 +14,7 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.hsqldb.HsqldbDataTypeFactory;
+import org.dbunit.ext.mysql.MySqlDataTypeFactory;
 import org.dbunit.operation.DatabaseOperation;
 import org.hibernate.HibernateException;
 import org.hibernate.internal.SessionImpl;
@@ -45,7 +46,7 @@ public abstract class AbstractDbUnitJpaTest {
 		entityManagerFactory = Persistence.createEntityManagerFactory("persistence-test");
 		entityManager = entityManagerFactory.createEntityManager();
 		connection = new DatabaseConnection(((SessionImpl) (entityManager.getDelegate())).connection());
-		connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new HsqldbDataTypeFactory());
+		connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
 
 		FlatXmlDataSetBuilder flatXmlDataSetBuilder = new FlatXmlDataSetBuilder();
 		flatXmlDataSetBuilder.setColumnSensing(true);
