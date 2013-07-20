@@ -1,4 +1,4 @@
-package org.nerdronix.springnetty.server;
+package com.github.cmled.springnettytemplate.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;

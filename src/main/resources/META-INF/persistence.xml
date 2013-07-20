@@ -3,11 +3,11 @@
     <persistence-unit name="persistence" transaction-type="RESOURCE_LOCAL">
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.geowarin.hibernate.jpa.standalone.model.User</class>
+		<class>com.github.cmled.springnettytemplate.model.User</class>
 
 		<properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpatestdb" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/spring-netty-template-test" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />

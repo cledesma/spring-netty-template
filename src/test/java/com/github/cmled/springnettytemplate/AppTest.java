@@ -1,4 +1,4 @@
-package com.geowarin.hibernate.jpa.standalone;
+package com.github.cmled.springnettytemplate;
 
 
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.geowarin.hibernate.jpa.standalone.model.User;
+import com.github.cmled.springnettytemplate.model.User;
 
 /**
  * 

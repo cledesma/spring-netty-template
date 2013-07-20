@@ -1,5 +1,5 @@
 
-package com.geowarin.hibernate.jpa.standalone.model;
+package com.github.cmled.springnettytemplate.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package org.nerdronix.springnetty.handlers;
+package com.github.cmled.springnettytemplate.handlers;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

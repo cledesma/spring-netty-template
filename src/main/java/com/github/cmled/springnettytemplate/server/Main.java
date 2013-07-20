@@ -1,10 +1,11 @@
-package org.nerdronix.springnetty.server;
+package com.github.cmled.springnettytemplate.server;
 
-import org.nerdronix.springnetty.cfg.SpringBeanConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+
+import com.github.cmled.springnettytemplate.config.SpringBeanConfig;
 
 public class Main {
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
