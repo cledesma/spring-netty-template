@@ -1,6 +1,6 @@
 package org.nerdronix.springnetty.server;
 
-import org.nerdronix.springnetty.cfg.SpringConfig;
+import org.nerdronix.springnetty.cfg.SpringBeanConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,7 +12,7 @@ public class Main {
 		LOG.debug("Starting application context");
 		@SuppressWarnings("resource")
 		AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(
-				SpringConfig.class);
+				SpringBeanConfig.class);
 		ctx.registerShutdownHook();
 	}
 

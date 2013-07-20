@@ -38,7 +38,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @ComponentScan("org.nerdronix")
 @PropertySource("classpath:netty-server.properties")
-public class SpringConfig {
+public class SpringBeanConfig {
 
 	@Value("${boss.thread.count}")
 	private int bossCount;
