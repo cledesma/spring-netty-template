@@ -13,6 +13,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.2.2.RELEASE</org.springframework.version>
 		<netty.version>4.0.0.CR6</netty.version>
+		<!-- Run Main with a simple mvn exec:java -->
+		<exec.mainClass>com.github.cmled.springnettytemplate.server.Main</exec.mainClass>
 	</properties>
 
 	<dependencies>
@@ -86,4 +88,25 @@
 		</dependency>
 
 	</dependencies>
+
+	<!-- Run Main -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.github.cmled.springnettytemplate.server.Main</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

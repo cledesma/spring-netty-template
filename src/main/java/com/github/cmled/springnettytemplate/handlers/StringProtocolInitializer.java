@@ -9,7 +9,7 @@ import io.netty.handler.codec.string.StringEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
+import com.github.cmled.springnettytemplate.handlers.ServerHandler;
 /**
  * Just a dummy protocol mainly to show the ServerBootstrap being initialized.
  * 
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Qualifier("springProtocolInitializer")
-public class StringProtocolInitalizer extends ChannelInitializer<SocketChannel> {
+public class StringProtocolInitializer extends ChannelInitializer<SocketChannel> {
 
 	@Autowired
 	StringDecoder stringDecoder;

@@ -1,4 +1,5 @@
 package com.github.cmled.springnettytemplate.config;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -20,8 +21,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-import com.github.cmled.springnettytemplate.handlers.StringProtocolInitalizer;
-
+import com.github.cmled.springnettytemplate.handlers.StringProtocolInitializer;
 
 /**
  * This class contains the bean definitions for this netty server. These beans
@@ -37,7 +37,7 @@ import com.github.cmled.springnettytemplate.handlers.StringProtocolInitalizer;
  * 
  */
 @Configuration
-@ComponentScan("org.nerdronix")
+@ComponentScan("com.github.cmled.springnettytemplate")
 @PropertySource("classpath:netty-server.properties")
 public class SpringBeanConfig {
 
@@ -55,13 +55,13 @@ public class SpringBeanConfig {
 
 	@Value("${so.backlog}")
 	private int backlog;
-	
+
 	@Value("${log4j.configuration}")
 	private String log4jConfiguration;
 
 	@Autowired
 	@Qualifier("springProtocolInitializer")
-	private StringProtocolInitalizer protocolInitalizer;
+	private StringProtocolInitializer protocolInitalizer;
 
 	@SuppressWarnings("unchecked")
 	@Bean(name = "serverBootstrap")
@@ -121,5 +121,5 @@ public class SpringBeanConfig {
 	public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
 	}
-	
+
 }
