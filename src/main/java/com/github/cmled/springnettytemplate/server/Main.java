@@ -1,20 +1,26 @@
 package com.github.cmled.springnettytemplate.server;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.Assert;
 
-import com.github.cmled.springnettytemplate.config.SpringBeanConfig;
+import com.github.cmled.springnettytemplate.controller.StaticFilesController;
+import com.github.cmled.springnettytemplate.dao.EntityManagerUtil;
 
 public class Main {
-	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-	public static void main(String[] args) {
-		LOG.debug("Starting application context");
-		@SuppressWarnings("resource")
-		AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(
-				SpringBeanConfig.class);
-		ctx.registerShutdownHook();
-	}
 
+	public static void main(String[] args) throws Exception {
+
+		ApplicationContext ac = new ClassPathXmlApplicationContext(
+				"root-context.xml");
+		EntityManagerUtil.initEntityManager(); // Initialize entityManager for
+												// the app
+		Assert.notNull(ac);
+		Assert.notNull(ac.getBean(StaticFilesController.class));
+
+		NettyServer netty = ac.getBean(NettyServer.class);
+
+		netty.start();
+
+	}
 }

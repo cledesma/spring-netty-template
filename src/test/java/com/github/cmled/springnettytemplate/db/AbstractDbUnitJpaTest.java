@@ -1,4 +1,4 @@
-package com.github.cmled.springnettytemplate;
+package com.github.cmled.springnettytemplate.db;
 
 import java.io.InputStream;
 import java.sql.SQLException;

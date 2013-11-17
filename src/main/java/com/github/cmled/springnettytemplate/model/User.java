@@ -1,46 +1,78 @@
-
 package com.github.cmled.springnettytemplate.model;
 
-import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Table(name = "users")
 @Entity
-public class User implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class User extends BaseModel {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
-	
-	@Column(name = "name", nullable = false, unique=true, length=50)
-	private String name;
+	@Column(name = "first_name", nullable = false)
+	private String firstName;
+	@Column(name = "middle_name")
+	private String middleName;
+	@Column(name = "last_name", nullable = false)
+	private String lastName;
+	@Column(nullable = false)
+	private Date birthday;
+	private String address;
+	@Column(name = "mobile_no")
+	private String mobileNo;
 
-	public long getId() {
-		return id;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getName() {
-		return name;
+	public String getMiddleName() {
+		return middleName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
+	public String getLastName() {
+		return lastName;
 	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
 }
